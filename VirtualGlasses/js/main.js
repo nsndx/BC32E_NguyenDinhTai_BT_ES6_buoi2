@@ -19,7 +19,7 @@ const img = dataGlasses.map((dataGlassesi, index) => `<img src="${dataGlassesi.s
 dom('#vglassesList').innerHTML = img.join('')
 
 // áp kính và thông tin vào mẫu
-const addglass = (index) => {
+window.addglass = (index) => {
     add(dataGlasses[index])
 }
 
@@ -33,8 +33,11 @@ const add = (obj) => {
 
 
 // xử lý nút before và after
+window.removeGlasses = (x) => {
+    removeGlasses(x)
+}
 const removeGlasses = (x) => {
-    a = dom('#avatar').innerHTML
+    let a = dom('#avatar').innerHTML
     if (a === '') {
         add(dataGlasses[0])
     } else if (x) {
